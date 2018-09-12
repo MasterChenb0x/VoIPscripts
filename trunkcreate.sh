@@ -31,6 +31,11 @@ CONTEXT="stlv-phones"
 CHANLIMIT=10
 TRUNK="clients-sip"
 
+if [ $# -eq 0 ]; then
+        usage
+        exit 0
+fi
+
 # Parse and handle arguments
 while getopts ":hISP:D:C:c:l:" opt; do
         case $opt in
